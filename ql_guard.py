@@ -41,7 +41,7 @@ def push(return_code):
                                       title="QL执行失败提醒",
                                       content=f"命令：{' '.join(sys.argv[1:])} 执行失败，错误码：{return_code}\n时间：{now_date}",
         )
-        print(response.text)
+        # print(response.text)
         success = False
         errcode = None
         errmsg = None
