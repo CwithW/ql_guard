@@ -36,8 +36,8 @@ def environ(key):
 def push(return_code):
     try:
         now_date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        notifier = onepush.get_notifier(environ("NOTIFIER"))
-        response = notifier.notify(token=environ("TOKEN"),secret=environ("SECRET"),
+        notifier = onepush.get_notifier(environ("QL_GUARD_NOTIFIER"))
+        response = notifier.notify(token=environ("QL_GUARD_TOKEN"),secret=environ("QL_GUARD_SECRET"),
                                       title="QL执行失败提醒",
                                       content=f"命令：{' '.join(sys.argv[1:])} 执行失败，错误码：{return_code}\n时间：{now_date}",
         )
